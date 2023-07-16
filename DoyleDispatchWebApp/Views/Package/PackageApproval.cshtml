@@ -1,0 +1,16 @@
+﻿@model Package
+
+@using (Html.BeginForm())
+{
+    <div class="d-flex justify-content-between align-items-center">
+        @Html.HiddenFor(m => m.DestinationId)
+        @Html.EditorFor(m => m.Image)
+        @Html.HiddenFor(m => m.ClientId)
+        @Html.EditorFor(m => m.PackageName)
+        @Html.EditorFor(m => m.DropDate)
+        @Html.EditorFor(m => m.PackageCategory)
+        @Html.EditorFor(m => m.Status)
+    </div>
+    <input type="submit" value="Approve Package" class="btn btn-success" />
+    <a class="btn btn-outline-secondary" asp-controller="Package" asp-action="Index">Cancel</a>
+}

@@ -1,0 +1,61 @@
+﻿@using DoyleDispatchWebApp.ViewModels
+@model EditClientViewModel
+
+<form asp-action="EditClientProfile" method="post" enctype="multipart/form-data">
+    <input type="hidden" id="Id" name="Id" asp-for="Id" />
+    <div class="col-6">
+        <div class="form-group">
+            <label asp-for="Surname">LastName:</label>
+            <input asp-for="Surname" type="text" class="form-control" />
+            <span asp-validation-for="Surname" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label asp-for="Othernames">OtherNames:</label>
+            <input asp-for="Othernames" type="text" class="form-control" />
+            <span asp-validation-for="Othernames" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label asp-for="Gender">Gender:</label>
+            <input asp-for="Gender" type="text" class="form-control" placeholder="Male"/>
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label asp-for="Birthdate">Date of Birth:</label>
+            <input asp-for="Birthdate" type="date" class="form-control" />
+            <span asp-validation-for="Birthdate" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label asp-for="Address">Home Address:</label>
+            <input asp-for="Address" type="text" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label asp-for="PhoneNumber">Phone No:</label>
+            <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="****-***-****"/>
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label asp-for="Image">Profile Image:</label>
+            <input asp-for="Image" type="file" class="form-control" />
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <a class="btn btn-outline-secondary" asp-controller="Dashboard" asp-action="Index">Cancel</a>
+        </div>
+    </div>
+</form>

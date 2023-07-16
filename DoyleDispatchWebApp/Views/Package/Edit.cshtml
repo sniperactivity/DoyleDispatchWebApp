@@ -1,0 +1,54 @@
+﻿@using DoyleDispatchWebApp.Data.Enum
+@using DoyleDispatchWebApp.ViewModels
+@model EditViewModel
+
+<form class="row g-3" method="post" asp-action="Edit" enctype="multipart/form-data">
+    <input type="hidden" value="DestinationId" id="DestinationId" />
+    <input type="hidden" value="ClientId" id="ClientId" />
+    <div class="col-md-6">
+        <label asp-for="PackageName" class="form-label">Package Name</label>
+        <input asp-for="PackageName" type="text" class="form-control" id="pname">
+        <span asp-validation-for="PackageName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="DropDate" class="form-label">DropOff Date</label>
+        <input asp-for="DropDate" type="date" class="form-control" id="date">
+        <span asp-validation-for="DropDate" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <label asp-for="Image" class="form-label">Package Image</label>
+        <input asp-for="Image" type="file" class="form-control" id="address" placeholder="Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Destination.Name" class="form-label">Recipient Name</label>
+        <input asp-for="Destination.Name" type="text" class="form-control" id="pname">
+        <span asp-validation-for="Destination.Name" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Destination.Contact" class="form-label">Recipient Phone</label>
+        <input asp-for="Destination.Contact" type="text" class="form-control" id="phone" placeholder="****-***-****">
+        <span asp-validation-for="Destination.Contact" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Destination.State" class="form-label">Destination State</label>
+        <input asp-for="Destination.State" type="text" class="form-control" id="state">
+        <span asp-validation-for="Destination.State" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="PackageCategory" class="form-label">Package Type</label><br />
+        <select asp-for="PackageCategory" asp-items="@Html.GetEnumSelectList<PackageCategory>()" class="form-select">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="PackageCategory" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <label asp-for="Destination.Address" class="form-label">Destination Address</label>
+        <input asp-for="Destination.Address" type="text" class="form-control" id="address" placeholder="1234 Main St">
+        <span asp-validation-for="Destination.Address" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a class="btn btn-outline-secondary float right" asp-controller="Dashboard" asp-action="Index">Cancel</a>
+    </div>
+</form>

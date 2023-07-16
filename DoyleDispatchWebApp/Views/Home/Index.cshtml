@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Doyle Dispatch Services</h1>
+            <p class="lead text-muted">
+                We provide complete solutions for all your moving needs such as: packing, wrapping, dismantling and assembling, loading and offloading, transportation to it final destination.
+            </p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">In-State Deliveries</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">&#8358;1500-&#8358;3k<small class="text-muted fw-light">/drop</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Same day delivery</li>
+                            <li>Email support</li>
+                            <li>Access to our list of Clients</li>
+                            <li>Up to 3 packages per person in a day</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Inter-State Deliveries</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">&#8358;5k-&#8358;10k<small class="text-muted fw-light">/drop</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>2-5 days to destination</li>
+                            <li>Email support</li>
+                            <li>Access to our list of Clients</li>
+                            <li>Discount for clients with more than one Packages</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-bg-primary border-primary">
+                        <h4 class="my-0 fw-normal">International Deliveries</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">&#8358;15k-&#8358;30k<small class="text-muted fw-light">/drop</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>6days-2weeks to destination</li>
+                            <li>Direct contact with transporter</li>
+                            <li>Tracking access</li>
+                            <li>Access to our list of Clients</li>
+                            <li>Discount for clients with more than one Packages</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 col-md-8 mx-auto">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a type="button" class="btn btn-outline-primary" asp-area="" asp-controller="Package" asp-action="Create">Send a New Package</a>
+            }
+            else
+            {
+                <p>
+                    <a class="btn btn-primary my-2" asp-controller="Account" asp-action="Login">Sign in </a>
+                    <a class="btn btn-secondary my-2" asp-controller="Account" asp-action="Register">Create An Account</a>
+                </p>
+            }
+            </div>       
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted"> &copy; 2023 - DoyleDispatchWebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></span>
+    </div>
+</footer>
+

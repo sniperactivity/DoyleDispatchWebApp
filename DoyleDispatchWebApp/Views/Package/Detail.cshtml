@@ -1,0 +1,31 @@
+﻿@model Package
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="row featurette">
+    <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">@Model.PackageName </h2>
+            <p class="text-muted">Package Type: @Model.PackageCategory</p>
+            <p class="text-muted">@Model.DropDate</p>
+            <h4 class="featurette-heading">Recipients Information</h4>
+        <ul>
+            <li class="text-muted">@Model.Destination.Name </li>
+            <li class="text-muted">@Model.Destination.State </li>
+            <li class="text-muted">@Model.Destination.Address </li>
+        </ul>
+    </div>
+    <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" src="@Model.Image" height="750" width="500" alt="Package image">
+    </div>
+</div>
+<hr />
+<div>
+    <a class="btn btn-secondary btn-lg btn-block" asp-controller="Dashboard" asp-action="Index"> Back </a>
+</div>
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted"> &copy; 2023 - DoyleDispatchWebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></span>
+    </div>
+</footer>
